@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Riutilizzabile;
 using UnityEngine;
 
@@ -12,7 +11,8 @@ namespace GGJ {
 		public float currentTime;
 		public Action GameOver;
 		public Action EnemyCalled;
-
+		public int SecondRemaning;
+		 public int MinutesRemaning;
 		private void Start() {
 			StartCoroutine(StartLevelTimer());
 			GameOver += (() => StopTimer());
@@ -21,8 +21,7 @@ namespace GGJ {
 
 		public IEnumerator DeathTimer() {
 			UiManager.Instance.Timer.SetActive(true);
-			int SecondRemaning;
-			int MinutesRemaning;
+			
 			while (true) {
 				currentTime += 1;
 				SecondRemaning = (int)timerForDeath - (int)currentTime;
