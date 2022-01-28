@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 
 namespace GGJ
 {
+  [ExecuteInEditMode]
 public class SpawnManager : MonoBehaviour
 {
   public List<GameObject> spawnableObjects;
   public int objectsToSpawn;
+  public float throwForce;
   public GameObject keyObject;
   public List<Transform> keyObjectSpawnPoints;
   public Transform spawnPoint;
@@ -40,7 +42,18 @@ public class SpawnManager : MonoBehaviour
   [Button]
   private void ShuffleSpawnedObjects()
   {
-    
+	  foreach(GameObject spawnedObject in spawnedObjects)
+	  {
+		  var rb=spawnedObject.GetComponent<Rigidbody>();
+      Vector3 eulerAngles = transform.eulerAngles;
+      eulerAngles = new Vector3(eulerAngles.x, Random.Range(0, 360), eulerAngles.z);
+      Transform transform1 = transform;
+      transform1.eulerAngles = eulerAngles;
+      rb.isKinematic = false;
+     Vector3 force = transform1.forward;
+     force = new Vector3(force .x, 1, force .z);
+     rb.AddForce(force * throwForce );
+	  }
   }
 
 
