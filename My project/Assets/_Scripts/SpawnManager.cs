@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Random = UnityEngine.Random;
+
 namespace GGJ
 {
 public class SpawnManager : MonoBehaviour
@@ -17,8 +20,9 @@ public class SpawnManager : MonoBehaviour
   private readonly List<GameObject> spawnedObjects=new List<GameObject>();
   private GameObject spawnedKeyItem;
 
-
-
+  private void Start() {
+    SpawnProps();
+  }
 
   [Button]
   private void SpawnProps()
