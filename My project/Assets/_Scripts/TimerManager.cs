@@ -16,6 +16,7 @@ namespace GGJ {
 		private void Start() {
 			StartCoroutine(StartLevelTimer());
 			GameOver += (() => StopTimer());
+			GameOver += (() => Time.timeScale = 0f);
 		}
 
 
