@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1322607935026610558}
   - component: {fileID: 1322607935026610559}
   m_Layer: 0
-  m_Name: Timer
+  m_Name: TimerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceee67dcd4c04a4ca5bdda70deb8d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToSpawnEnemy: 0
   timerForDeath: 10
-  timeToSpwanEnemy: 0
-  currentTime: 0
+  timerIsRunning: 0
+  timeText: {fileID: 0}
+  minutes: 0
+  seconds: 0
