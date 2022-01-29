@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Aura2API;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -9,6 +8,10 @@ public class ButtonFunctions : MonoBehaviour {
 	public AudioMixer mixer;
 	public GameObject SettingPannel;
 	public CinemachineFreeLook camera;
+	public AuraCamera auraCamera;
+	public GameObject sun;
+	public GameObject postProcessVolume;
+	
 	public void exitGame() {
 		Application.Quit();
 	}
@@ -35,4 +38,12 @@ public class ButtonFunctions : MonoBehaviour {
 	public void MouseInvert(bool b) {
 		camera.m_XAxis.m_InvertInput = b;
 	}
+	
+	public void TurnLowGraphics(bool check)
+	{
+		sun.SetActive(!check);
+		auraCamera.enabled = !check;
+		postProcessVolume.SetActive(!check);
+	}
+	
 }
