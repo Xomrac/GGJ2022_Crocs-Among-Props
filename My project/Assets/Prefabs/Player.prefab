@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4802590451728485137}
   - component: {fileID: 4802590451728485136}
   - component: {fileID: 7385144179140378853}
-  - component: {fileID: 1218120626}
+  - component: {fileID: 1218120625}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   rotationSpeed: 200
-  jumpSpeed: 30
+  jumpSpeed: 60
   jumpButtonGracePeriod: 1
   gravity: 5
   maxSpeed: 30
@@ -121,8 +121,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &1218120626
-BoxCollider:
+--- !u!136 &1218120625
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,9 +131,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.39915594
+  m_Height: 1.0958251
+  m_Direction: 2
+  m_Center: {x: -0.03057611, y: 0.14, z: 0.01046139}
 --- !u!1 &4802590453322132774
 GameObject:
   m_ObjectHideFlags: 0
