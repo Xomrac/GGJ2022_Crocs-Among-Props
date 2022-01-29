@@ -37,7 +37,12 @@ namespace GGJ
 				movementDirection.Normalize();
 				
 				Vector3 velocity = movementDirection * (speedCurve.Evaluate(movementTimer)*maxSpeed)* Time.fixedDeltaTime;
-				rb.velocity += velocity;
+				Vector3 rbVelocity = rb.velocity;
+				rbVelocity += velocity;
+				rb.velocity = rbVelocity;
+				Mathf.Clamp(rbVelocity.x, 0, maxSpeed);
+				Mathf.Clamp(rbVelocity.z, 0, maxSpeed);
+				
 				if (movementDirection != Vector3.zero)
 				{
 					Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
