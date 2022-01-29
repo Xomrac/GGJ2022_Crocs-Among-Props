@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7738089095303485396}
   - component: {fileID: 21863210744335770}
   - component: {fileID: 5982104648929431142}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mdl_banana
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
