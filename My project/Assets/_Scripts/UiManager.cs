@@ -9,6 +9,7 @@ namespace GGJ
     public class UiManager : Singleton<UiManager>
     {
         public GameObject DeathPanel;
+        public GameObject optionPanel;
         public TextMeshProUGUI Timer;
         public TextMeshProUGUI WinPanel;
 
