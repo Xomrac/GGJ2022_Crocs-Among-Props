@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour {
-	private AudioMixer mixer;
+	public AudioMixer mixer;
 	public GameObject SettingPannel;
 	public CinemachineFreeLook camera;
 	public void exitGame() {

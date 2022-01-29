@@ -121,6 +121,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 987754136}
     - target: {fileID: 6274393336427193853, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_Value
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274393336427193853, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_MinValue
       value: 20
       objectReference: {fileID: 0}
