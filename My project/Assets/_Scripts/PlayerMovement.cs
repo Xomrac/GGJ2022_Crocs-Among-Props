@@ -11,6 +11,7 @@ namespace GGJ
 		private Rigidbody rb;
 		private float movementTimer;
 		private bool isGrounded;
+		public float maxDistanceToRaycast;
 		
 
 
@@ -35,7 +36,7 @@ namespace GGJ
 				movementTimer += Time.fixedDeltaTime;
 				movementDirection = Quaternion.AngleAxis(playerCamera.rotation.eulerAngles.y, Vector3.up) * movementDirection;
 				movementDirection.Normalize();
-				
+				GetComponent<Animator>().SetBool("isRunning",true);
 				Vector3 velocity = movementDirection * (speedCurve.Evaluate(movementTimer)*maxSpeed)* Time.fixedDeltaTime;
 				Vector3 rbVelocity = rb.velocity;
 				rbVelocity += velocity;
@@ -56,12 +57,13 @@ namespace GGJ
 			else
 			{
 				movementTimer = 0;
+				GetComponent<Animator>().SetBool("isRunning",false);
 			}
 		}
 
 		private bool IsGrounded()
 		{
-			return Physics.Raycast(transform.position, Vector3.down,.7f);
+			return Physics.Raycast(transform.position, -transform.up,maxDistanceToRaycast);
 		}
 
 		private void Update() {
