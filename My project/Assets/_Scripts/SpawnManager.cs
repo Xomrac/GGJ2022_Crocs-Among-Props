@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     ShuffleSpawnedObjects();
     SpawnKeyItemOnStart();
   }
-  
+
 
   [Button]
   private void SpawnProps()
@@ -35,12 +35,11 @@ public class SpawnManager : MonoBehaviour
     for (int i = 0; i < objectsToSpawn; i++)
     {
       int randomNumber = Random.Range(0, spawnableObjects.Count);
-      GameObject spawnedObject=Instantiate(spawnableObjects[randomNumber], spawnPoint.position, Quaternion.identity,spawnPoint);
+      GameObject spawnedObject = Instantiate(spawnableObjects[randomNumber], spawnPoint.position, Quaternion.identity, spawnPoint);
       spawnedObjects.Add(spawnedObject);
     }
   }
 
-  [Button]
   private void ShuffleSpawnedObjects()
   {
 	  foreach(GameObject spawnedObject in spawnedObjects)

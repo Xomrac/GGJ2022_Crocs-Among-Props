@@ -7,7 +7,8 @@ namespace GGJ {
     
     public class GhostController : MonoBehaviour {
         // Start is called before the first frame update
-        [MinMaxSlider(0f,20f)]public Vector2 forceToApply;
+        [MinMaxSlider(0f,20f)]public Vector2 horizontalForceToApply;
+        [MinMaxSlider(0f,20f)]public Vector2 verticalForceToApply;
         private NavMeshAgent agent;
         public float ghostSpeed=14;
         public float ghostAngularSpeed=360;
@@ -40,12 +41,10 @@ namespace GGJ {
             // Pick the first indice of a random triangle in the nav mesh
             int firstVertexSelected = Random.Range(0, maxIndices);
             int secondVertexSelected = Random.Range(0, maxIndices);
-            //Spawn on Verticies
-            Vector3 point = navMeshData.vertices[navMeshData.indices[firstVertexSelected]];
- 
+            Vector3 point;
             Vector3 firstVertexPosition = navMeshData.vertices[navMeshData.indices[firstVertexSelected]];
             Vector3 secondVertexPosition = navMeshData.vertices[navMeshData.indices[secondVertexSelected]];
-            //Eliminate points that share a similar X or Z position to stop spawining in square grid line formations
+            //Eliminate points that share a similar X or Z position to stop spawning in square grid line formations
             if ((int)firstVertexPosition.x == (int)secondVertexPosition.x || (int)firstVertexPosition.z == (int)secondVertexPosition.z)
             {
                 point = FindRandomWanderPosition();
@@ -63,8 +62,8 @@ namespace GGJ {
             if (other.CompareTag("Throwable"))
             {
                 var rb = other.GetComponent<Rigidbody>();
-                Vector3 forceToApply = (transform.forward * this.forceToApply) + (Vector3.up * this.forceToApply);
-                rb.AddForce(forceToApply,ForceMode.Impulse);
+                Vector3 forceApplied = (transform.forward * horizontalForceToApply) + (Vector3.up * verticalForceToApply);
+                rb.AddForce(forceApplied,ForceMode.Impulse);
 
             }
         }
