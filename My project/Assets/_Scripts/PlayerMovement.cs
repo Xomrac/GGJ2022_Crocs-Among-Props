@@ -11,6 +11,7 @@ namespace GGJ
 		private Rigidbody rb;
 		private float movementTimer;
 		private bool isGrounded;
+		private RaycastHit hit;
 		
 
 
@@ -30,6 +31,7 @@ namespace GGJ
 			{
 				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 			}
+			
 			if (movementDirection != Vector3.zero)
 			{
 				movementTimer += Time.fixedDeltaTime;
@@ -49,8 +51,11 @@ namespace GGJ
 				if (movementDirection != Vector3.zero)
 				{
 					Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-
+					
 					transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+					// if (Physics.Raycast(transform.position, -transform.up,out hit,.7f)) {
+					// 	transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal)), Time.fixedDeltaTime);
+					// }
 				}
 			}
 			else
@@ -61,7 +66,7 @@ namespace GGJ
 
 		private bool IsGrounded()
 		{
-			return Physics.Raycast(transform.position, Vector3.down,.7f);
+			return Physics.Raycast(transform.position, -transform.up,.7f);
 		}
 
 		private void Update() {
