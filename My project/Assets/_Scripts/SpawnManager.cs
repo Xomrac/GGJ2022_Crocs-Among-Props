@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace GGJ
 {
-  [ExecuteInEditMode]
+
 public class SpawnManager : MonoBehaviour
 {
   public List<GameObject> spawnableObjects;
@@ -18,14 +18,15 @@ public class SpawnManager : MonoBehaviour
   public Transform spawnPoint;
 
 
-
-  private readonly List<GameObject> spawnedObjects=new List<GameObject>();
+  [SerializeField][HideInInspector]List<GameObject> spawnedObjects=new List<GameObject>();
   private GameObject spawnedKeyItem;
 
-  private void Start() {
-    SpawnProps();
-    SpawnKeyItem();
+  private void Start()
+  {
+    ShuffleSpawnedObjects();
+    SpawnKeyItemOnStart();
   }
+  
 
   [Button]
   private void SpawnProps()
@@ -45,17 +46,24 @@ public class SpawnManager : MonoBehaviour
 	  foreach(GameObject spawnedObject in spawnedObjects)
 	  {
 		  var rb=spawnedObject.GetComponent<Rigidbody>();
-      Vector3 eulerAngles = transform.eulerAngles;
-      eulerAngles = new Vector3(eulerAngles.x, Random.Range(0, 360), eulerAngles.z);
-      Transform transform1 = transform;
-      transform1.eulerAngles = eulerAngles;
+      Vector3 spawnedObjectRotation = spawnedObject.transform.eulerAngles;
+      spawnedObjectRotation = new Vector3(spawnedObjectRotation.x, Random.Range(0, 360), spawnedObjectRotation.z);
+      Transform spawnedObjectTransform = spawnedObject.transform;
+      spawnedObjectTransform.eulerAngles = spawnedObjectRotation;
       rb.isKinematic = false;
-     Vector3 force = transform1.forward;
-     force = new Vector3(force .x, 1, force .z);
-     rb.AddForce(force * throwForce );
-	  }
+     Vector3 appliedForce = spawnedObjectTransform.forward;
+     appliedForce = new Vector3(appliedForce .x, 1, appliedForce .z);
+     rb.AddForce(appliedForce * throwForce,ForceMode.Impulse);
+
+    }
   }
 
+  private void SpawnKeyItemOnStart()
+  {
+    int randomNumber = Random.Range(0, keyObjectSpawnPoints.Count);
+    Transform randomTransform = keyObjectSpawnPoints[randomNumber];
+    spawnedKeyItem=Instantiate(keyObject, randomTransform.position, Quaternion.identity,randomTransform);
+  }
 
   [Button]
   private void SpawnKeyItem()

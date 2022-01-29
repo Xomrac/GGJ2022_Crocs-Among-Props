@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -9,40 +10,47 @@ namespace GGJ {
     
     public class Enemies : MonoBehaviour {
         // Start is called before the first frame update
-        public float forceMax;
-        public Vector3 path;
+        [MinMaxSlider(0f,20f)]public Vector2 forceApplied;
         private NavMeshAgent agent;
-        public GameObject wallDx;
-        public GameObject wallSx;
-        public GameObject wallUp;
-        public GameObject wallDown;
+        public float wanderRadius;
+        public float wanderTimer;
+        private Transform target;
+        private float elapsedTime;
 
         private void Start() {
             agent = GetComponent<NavMeshAgent>();
-            MovetoLocation();
+            Vector3 wanderPosition = FindRandomWanderPosition(transform.position, wanderRadius);
+            agent.SetDestination(wanderPosition);
         }
 
-        private void Update() {
-            CheckLocation();
-        }
-
-        private void CheckLocation() {
-            if (Vector3.Distance(transform.position, path) < 0.5f) {
-                MovetoLocation();
-
+        private void Update() 
+        {
+            elapsedTime += Time.deltaTime;
+ 
+            if (elapsedTime >= wanderTimer) 
+            {
+                Vector3 wanderPosition = FindRandomWanderPosition(transform.position, wanderRadius);
+                agent.SetDestination(wanderPosition);
+                elapsedTime = 0;
             }
         }
 
-        private void MovetoLocation() {
-            path= new Vector3(Random.Range(wallSx.transform.position.x,wallDx.transform.position.x),transform.position.y,Random.Range(wallDown.transform.position.z,wallUp.transform.position.z));
-            agent.destination = path;
-            agent.isStopped = false;
-
+        private static Vector3 FindRandomWanderPosition(Vector3 origin, float distance) 
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * distance;
+            randomDirection += origin;
+            NavMeshHit navHit;
+            NavMesh.SamplePosition (randomDirection, out navHit, distance, -1);
+            return navHit.position;
         }
-
-        private void OnTriggerEnter(Collider other) {
-            if (other.CompareTag("Throwable")) {
-                other.GetComponent<Rigidbody>().AddForce((transform.forward * Random.Range(forceMax,forceMax+10) )+ (Vector3.up*Random.Range(forceMax, forceMax+10)),ForceMode.Impulse);
+        
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Throwable"))
+            {
+                var rb = other.GetComponent<Rigidbody>();
+                Vector3 forceToApply = (transform.forward * forceApplied) + (Vector3.up * forceApplied);
+                rb.AddForce(forceToApply,ForceMode.Impulse);
 
             }
         }
