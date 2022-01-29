@@ -11,7 +11,7 @@ namespace GGJ
 		private Rigidbody rb;
 		private float movementTimer;
 		private bool isGrounded;
-		private RaycastHit hit;
+		public float maxDistanceToRaycast;
 		
 
 
@@ -31,13 +31,12 @@ namespace GGJ
 			{
 				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 			}
-			
 			if (movementDirection != Vector3.zero)
 			{
 				movementTimer += Time.fixedDeltaTime;
 				movementDirection = Quaternion.AngleAxis(playerCamera.rotation.eulerAngles.y, Vector3.up) * movementDirection;
 				movementDirection.Normalize();
-				
+				GetComponent<Animator>().SetBool("isRunning",true);
 				Vector3 velocity = movementDirection * (speedCurve.Evaluate(movementTimer)*maxSpeed)* Time.fixedDeltaTime;
 				Vector3 rbVelocity = rb.velocity;
 				rbVelocity += velocity;
@@ -51,22 +50,20 @@ namespace GGJ
 				if (movementDirection != Vector3.zero)
 				{
 					Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-					
+
 					transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-					// if (Physics.Raycast(transform.position, -transform.up,out hit,.7f)) {
-					// 	transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal)), Time.fixedDeltaTime);
-					// }
 				}
 			}
 			else
 			{
 				movementTimer = 0;
+				GetComponent<Animator>().SetBool("isRunning",false);
 			}
 		}
 
 		private bool IsGrounded()
 		{
-			return Physics.Raycast(transform.position, -transform.up,.7f);
+			return Physics.Raycast(transform.position, -transform.up,maxDistanceToRaycast);
 		}
 
 		private void Update() {

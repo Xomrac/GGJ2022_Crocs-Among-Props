@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2485043665120863881}
-  m_LocalRotation: {x: 0.04092683, y: -0.000000004297991, z: 1.7605065e-10, w: 0.99916214}
+  m_LocalRotation: {x: 0.040926833, y: -0.000000017721073, z: 7.258755e-10, w: 0.99916214}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1353965, y: 1}
+    m_SensorSize: {x: 2.5657277, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1353965, y: 1}
+    m_SensorSize: {x: 2.5657277, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -179,12 +179,12 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 50
+    m_MaxSpeed: 150
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: -180
     m_MaxValue: 180
     m_Wrap: 1
@@ -653,7 +653,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2485043666432036423}
-  m_LocalRotation: {x: 0.022793835, y: -0.0000000018621614, z: 4.245683e-11, w: 0.9997402}
+  m_LocalRotation: {x: 0.022793842, y: -0, z: -0, w: 0.9997402}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1353965, y: 1}
+    m_SensorSize: {x: 2.5657277, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -731,7 +731,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2485043666912675508}
-  m_LocalRotation: {x: 0.059094317, y: 0.000000017203014, z: -0.00000000101838, w: 0.99825245}
+  m_LocalRotation: {x: 0.059094295, y: 0.000000017994939, z: -0.0000000010652599, w: 0.99825245}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1353965, y: 1}
+    m_SensorSize: {x: 2.5657277, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
