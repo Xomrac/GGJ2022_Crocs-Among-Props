@@ -7,10 +7,12 @@ using UnityEngine;
 namespace GGJ 
 {
 
-	public class TimerManager : Singleton<TimerManager> 
-	{
+	public class TimerManager : Singleton<TimerManager> {
+		public AudioClip lose;
+		public AudioSource source;
 		public float timeToSpawnEnemy;
 		public Action GameOver;
+		public bool IsGameOver;
 		public Action EnemyCalled;
 		public float timerForDeath;
 		public bool timerIsRunning = false;
@@ -24,6 +26,10 @@ namespace GGJ
 			timerIsRunning = true;
 			// GameOver += (() => StopTimer());
 			GameOver += (() => Time.timeScale = 0f);
+			GameOver += (() =>  source.PlayOneShot(lose));
+			GameOver += (() =>  IsGameOver=true);
+			GameOver += (() =>  Cursor.visible=true);
+			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");
 
 			timeText = UiManager.Instance.Timer;
 			timeText.gameObject.SetActive(true);

@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b63bb272cee68438aa931d9bdedae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 044347b404b5f484eb3e280658ce05ba, type: 3}
   timeToReproduceSound: 0
 --- !u!54 &1174652991111164138
 Rigidbody:

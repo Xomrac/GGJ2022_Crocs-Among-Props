@@ -69,7 +69,7 @@ namespace GGJ
 
 		private void Update() {
 			
-			if (Input.GetButtonDown("Cancel")) {
+			if (Input.GetButtonDown("Cancel")&& !TimerManager.Instance.IsGameOver) {
 				UiManager.Instance.optionPanel.SetActive(!UiManager.Instance.optionPanel.activeSelf);
 				Time.timeScale = Mathf.Clamp(Convert.ToInt32(!UiManager.Instance.optionPanel.activeSelf), 0, 1f);
 				Cursor.lockState = CursorLockMode.Confined;

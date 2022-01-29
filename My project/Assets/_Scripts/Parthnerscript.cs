@@ -7,12 +7,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Parthnerscript : MonoBehaviour {
-   public AudioClip sound;
+   public AudioClip winSound;
    public float timeToReproduceSound;
 
    private void OnTriggerEnter(Collider other) {
       if (other.CompareTag("Player")) {
          TimerManager.Instance.StopAllCoroutines();
+         TimerManager.Instance.source.PlayOneShot(winSound);
          UiManager.Instance.winText.text += $"{TimerManager.Instance.minutes:00}:{TimerManager.Instance.seconds:00}";
          UiManager.Instance.WinPanel.gameObject.SetActive(true);
          Cursor.visible = true;
