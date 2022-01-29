@@ -15,6 +15,9 @@ public class ButtonFunctions : MonoBehaviour {
 
 	public void StartTimeTrial() {
 		SceneManager.LoadScene(1);
+	}	
+	public void ToMainMenu() {
+		SceneManager.LoadScene(0);
 	}
 
 	public void volume(float slider) {

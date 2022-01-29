@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2363676360458659195}
   - component: {fileID: 2363676360458659194}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: Uimanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathPanel: {fileID: 6959933728158288212}
+  optionPanel: {fileID: 0}
   Timer: {fileID: 6959933727786784291}
   WinPanel: {fileID: 1142346891052625782}
 --- !u!1001 &1926203954417499522
@@ -55,6 +56,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2363676360458659195}
     m_Modifications:
+    - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368299216321146246, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368299216321146246, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8803946367544867299, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0
