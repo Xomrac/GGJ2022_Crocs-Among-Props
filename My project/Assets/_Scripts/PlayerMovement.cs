@@ -10,10 +10,12 @@ namespace GGJ
 		[SerializeField] private float jumpSpeed;
 		[SerializeField] private float maxSpeed;
 		[SerializeField] private AnimationCurve speedCurve;
+		[SerializeField] private int maxJumps;
 		private Rigidbody rb;
 		private float movementTimer;
-		private bool isGrounded;
 		public float maxDistanceToRaycast;
+
+		private int timesJumped;
 		
 
 
@@ -23,6 +25,7 @@ namespace GGJ
 			playerCamera = Camera.main.transform;
 			Cursor.lockState = CursorLockMode.Confined;
 			Cursor.visible = false;
+			timesJumped = 0;
 		}
 
 		private void FixedUpdate() 
@@ -30,10 +33,16 @@ namespace GGJ
 			float horizontalInput = Input.GetAxis("Horizontal");
 			float verticalInput = Input.GetAxis("Vertical");
 			var movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-			if (IsGrounded() && Input.GetButtonDown("Jump"))
+			
+			if ((IsGrounded() && Input.GetButtonDown("Jump"))|| (!IsGrounded() && timesJumped<maxJumps && Input.GetButtonDown("Jump")))
 			{
 				TimerManager.Instance.source.PlayOneShot(jump,0.6f);
 				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+				timesJumped++;
+			}
+			if (IsGrounded())
+			{
+				timesJumped = 0;
 			}
 			if (movementDirection != Vector3.zero)
 			{

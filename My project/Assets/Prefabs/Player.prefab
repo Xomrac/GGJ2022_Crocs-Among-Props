@@ -4909,6 +4909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c397f4c07da574db16892cc9080c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: {fileID: 0}
+  move: {fileID: 0}
   playerCamera: {fileID: 0}
   rotationSpeed: 100
   jumpSpeed: 5
@@ -4937,7 +4939,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxDistanceToRaycast: 5
+  maxJumps: 2
+  maxDistanceToRaycast: 0.7
+  timesJumped: 0
 --- !u!54 &7385144179140378853
 Rigidbody:
   m_ObjectHideFlags: 0
