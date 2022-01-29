@@ -10,6 +10,7 @@ namespace GGJ
 	public class TimerManager : Singleton<TimerManager> {
 		public AudioClip lose;
 		public AudioSource source;
+		public AudioSource OSTSource;
 		public float timeToSpawnEnemy;
 		public Action GameOver;
 		public bool IsGameOver;
@@ -30,6 +31,7 @@ namespace GGJ
 			GameOver += (() =>  IsGameOver=true);
 			GameOver += (() =>  Cursor.visible=true);
 			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");
+			GameOver += (() => Instance.OSTSource.Stop());
 
 			timeText = UiManager.Instance.Timer;
 			timeText.gameObject.SetActive(true);
