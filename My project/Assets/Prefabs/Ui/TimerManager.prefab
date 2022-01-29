@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceee67dcd4c04a4ca5bdda70deb8d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lose: {fileID: 8300000, guid: a01871c9b55f3e44ebc777fea397d45c, type: 3}
+  source: {fileID: 0}
+  OSTSource: {fileID: 0}
   timeToSpawnEnemy: 0
-  timerForDeath: 10
+  IsGameOver: 0
+  timerForDeath: 800
   timerIsRunning: 0
   timeText: {fileID: 0}
   minutes: 0
