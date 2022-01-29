@@ -1,5 +1,6 @@
 
 using System;
+using GGJ;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -50,9 +51,8 @@ public class PlayerMovement : MonoBehaviour {
 	private void Start()
 	{
 		
-		// rb = GetComponent<Rigidbody>();
-		
-		//win = FindObjectOfType<TMP_Text>();
+		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.visible = false;
 	}
 	// private void FixedUpdate()
 	// {
@@ -93,6 +93,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			UiManager.Instance.optionPanel.SetActive(!UiManager.Instance.optionPanel.activeSelf);
+			Time.timeScale = Mathf.Clamp(Convert.ToInt32(!UiManager.Instance.optionPanel.activeSelf),0,1f);
+			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.visible = UiManager.Instance.optionPanel.activeSelf;
+		}
 		float horizontalInput = Input.GetAxis("Horizontal");
 		float verticalInput = Input.GetAxis("Vertical");
 
