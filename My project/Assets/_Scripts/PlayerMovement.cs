@@ -3,6 +3,8 @@ using UnityEngine;
 namespace GGJ 
 {
 	public class PlayerMovement : MonoBehaviour {
+		public AudioClip jump;
+		public AudioClip move;
 		[SerializeField] private Transform playerCamera;
 		[SerializeField] private float rotationSpeed;
 		[SerializeField] private float jumpSpeed;
@@ -30,6 +32,7 @@ namespace GGJ
 			var movementDirection = new Vector3(horizontalInput, 0, verticalInput);
 			if (IsGrounded() && Input.GetButtonDown("Jump"))
 			{
+				TimerManager.Instance.source.PlayOneShot(jump,0.6f);
 				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 			}
 			if (movementDirection != Vector3.zero)
