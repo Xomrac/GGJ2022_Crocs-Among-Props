@@ -40,8 +40,11 @@ namespace GGJ
 				Vector3 rbVelocity = rb.velocity;
 				rbVelocity += velocity;
 				rb.velocity = rbVelocity;
-				Mathf.Clamp(rbVelocity.x, 0, maxSpeed);
-				Mathf.Clamp(rbVelocity.z, 0, maxSpeed);
+				//Mathf.Clamp(rb.velocity.x, 0, maxSpeed);
+				//Mathf.Clamp(rb.velocity.z, 0, maxSpeed);
+				if (rb.velocity.magnitude > maxSpeed) {
+					rb.velocity = rb.velocity.normalized * maxSpeed;
+				}
 				
 				if (movementDirection != Vector3.zero)
 				{
