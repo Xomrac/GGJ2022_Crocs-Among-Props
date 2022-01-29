@@ -1009,23 +1009,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485043666432036409, guid: e42585bd31b29fc4cacf745cfea200e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.1107999e-16
+      value: 5.7690885e-20
       objectReference: {fileID: 0}
     - target: {fileID: 2485043666432036409, guid: e42585bd31b29fc4cacf745cfea200e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.5918016e-18
+      value: 1.5918016e-18
       objectReference: {fileID: 0}
     - target: {fileID: 2485043666912675510, guid: e42585bd31b29fc4cacf745cfea200e2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.059094317
+      value: 0.05909429
       objectReference: {fileID: 0}
     - target: {fileID: 2485043666912675510, guid: e42585bd31b29fc4cacf745cfea200e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017203014
+      value: -0.00000001699019
       objectReference: {fileID: 0}
     - target: {fileID: 2485043666912675510, guid: e42585bd31b29fc4cacf745cfea200e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000000101838
+      value: 0.000000001005781
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e42585bd31b29fc4cacf745cfea200e2, type: 3}
@@ -11544,6 +11544,10 @@ PrefabInstance:
       propertyPath: WinPanel
       value: 
       objectReference: {fileID: 1108841953}
+    - target: {fileID: 2363676360458659194, guid: eeab72ea9776a1e4990dcfcc4b8eb5cc, type: 3}
+      propertyPath: DeathPanel
+      value: 
+      objectReference: {fileID: 1108841953}
     - target: {fileID: 2363676360458659195, guid: eeab72ea9776a1e4990dcfcc4b8eb5cc, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -11592,7 +11596,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: eeab72ea9776a1e4990dcfcc4b8eb5cc, type: 3}
 --- !u!1 &1108841953 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6959933728158288212, guid: eeab72ea9776a1e4990dcfcc4b8eb5cc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5591789703509342231, guid: eeab72ea9776a1e4990dcfcc4b8eb5cc, type: 3}
   m_PrefabInstance: {fileID: 1108841952}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1124975890
