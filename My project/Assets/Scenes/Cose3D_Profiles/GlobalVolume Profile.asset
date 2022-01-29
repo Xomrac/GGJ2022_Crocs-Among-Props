@@ -18,13 +18,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 5.43
+    value: 4.49
   threshold:
     overrideState: 1
-    value: 1
+    value: 1.29
   softKnee:
     overrideState: 1
-    value: 0.591
+    value: 1
   clamp:
     overrideState: 0
     value: 65472
@@ -64,15 +64,15 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   externalLut:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -150,14 +150,14 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.8737891, y: 0.9073842, z: 1, w: 0}
   gamma:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.9888513, z: 0.96357906, w: 0.054570265}
   gain:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.8964477, z: 0.9080286, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1392,13 +1392,13 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 8.9
+    value: 10
   aperture:
     overrideState: 1
-    value: 13.5
+    value: 12.1
   focalLength:
     overrideState: 1
     value: 129
   kernelSize:
     overrideState: 1
-    value: 2
+    value: 1
