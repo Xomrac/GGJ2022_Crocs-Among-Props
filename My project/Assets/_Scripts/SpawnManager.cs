@@ -60,8 +60,10 @@ public class SpawnManager : MonoBehaviour
   private void SpawnKeyItemOnStart()
   {
     int randomNumber = Random.Range(0, keyObjectSpawnPoints.Count);
-    Transform randomTransform = keyObjectSpawnPoints[randomNumber];
-    spawnedKeyItem=Instantiate(keyObject, randomTransform.position, Quaternion.identity,randomTransform);
+    if (keyObjectSpawnPoints.Count>0) {
+      Transform randomTransform = keyObjectSpawnPoints[randomNumber];
+      spawnedKeyItem=Instantiate(keyObject, randomTransform.position, Quaternion.identity,randomTransform);
+    }
   }
 
   [Button]

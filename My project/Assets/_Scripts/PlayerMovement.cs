@@ -76,6 +76,7 @@ namespace GGJ
 
 		private bool IsGrounded()
 		{
+			Debug.DrawRay(transform.position, -transform.up*maxDistanceToRaycast,Color.blue);
 			return Physics.Raycast(transform.position, -transform.up,maxDistanceToRaycast);
 		}
 
