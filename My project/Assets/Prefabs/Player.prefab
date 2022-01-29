@@ -51,10 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   rotationSpeed: 200
-  jumpSpeed: 10
+  jumpSpeed: 30
   jumpButtonGracePeriod: 1
   gravity: 5
-  maxSpeed: 10
+  maxSpeed: 30
 --- !u!33 &4802590451728485137
 MeshFilter:
   m_ObjectHideFlags: 0

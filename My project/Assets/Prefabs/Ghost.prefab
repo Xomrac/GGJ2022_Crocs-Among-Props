@@ -97,7 +97,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7899179874415011628
 MonoBehaviour:
@@ -111,12 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272ac859a5b02554a83429a74f75a3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMax: 10
-  path: {x: 0, y: 0, z: 0}
-  wallDx: {fileID: 0}
-  wallSx: {fileID: 0}
-  wallUp: {fileID: 0}
-  wallDown: {fileID: 0}
+  horizontalForceToApply: {x: 18.232128, y: 20}
+  verticalForceToApply: {x: 10.930054, y: 14.619523}
+  ghostSpeed: 14
+  ghostAngularSpeed: 360
 --- !u!195 &7899179874415011631
 NavMeshAgent:
   m_ObjectHideFlags: 0
