@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathPanel: {fileID: 6959933728158288212}
-  optionPanel: {fileID: 0}
+  optionPanel: {fileID: 6129589804917136582}
   Timer: {fileID: 6959933727786784291}
-  WinPanel: {fileID: 1142346891052625782}
+  WinPanel: {fileID: 5591789703509342231}
 --- !u!1001 &1926203954417499522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,17 +166,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
---- !u!114 &1142346891052625782 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1540563380345459444, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+--- !u!1 &5591789703509342231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6278377770298738069, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
   m_PrefabInstance: {fileID: 1926203954417499522}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!1 &6129589804917136582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5740942979501187396, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+  m_PrefabInstance: {fileID: 1926203954417499522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6959933727786784291 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8803946366234274721, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
