@@ -28,7 +28,7 @@ namespace GGJ
 			float horizontalInput = Input.GetAxis("Horizontal");
 			float verticalInput = Input.GetAxis("Vertical");
 			var movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-			if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+			if (IsGrounded() && Input.GetButtonDown("Jump"))
 			{
 				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 			}
