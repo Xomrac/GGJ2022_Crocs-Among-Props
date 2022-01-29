@@ -10,13 +10,15 @@ namespace GGJ {
     public class Enemies : MonoBehaviour {
         // Start is called before the first frame update
         public float forceMax;
-        public List<Transform> path;
+        public Vector3 path;
         private NavMeshAgent agent;
-        [SerializeField]private int index;
+        public GameObject wallDx;
+        public GameObject wallSx;
+        public GameObject wallUp;
+        public GameObject wallDown;
 
         private void Start() {
             agent = GetComponent<NavMeshAgent>();
-            index = 0;
             MovetoLocation();
         }
 
@@ -25,21 +27,15 @@ namespace GGJ {
         }
 
         private void CheckLocation() {
-            if (Vector3.Distance(transform.position, path[index].position) < 0.5f) {
-                if (index == path.Count-1) {
-                    Destroy(gameObject);
-                }
-                else {
-                    index++;
-                    MovetoLocation();
-
-                }
+            if (Vector3.Distance(transform.position, path) < 0.5f) {
+                MovetoLocation();
 
             }
         }
 
         private void MovetoLocation() {
-            agent.destination = path[index].position;
+            path= new Vector3(Random.Range(wallSx.transform.position.x,wallDx.transform.position.x),transform.position.y,Random.Range(wallDown.transform.position.z,wallUp.transform.position.z));
+            agent.destination = path;
             agent.isStopped = false;
 
         }
