@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd42f108b5eb5f4ea4a6646aeedfef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: e481d48cdc412104d9b83ff19231ffe7, type: 2}
   SettingPannel: {fileID: 6129589804917136582}
   camera: {fileID: 0}
 --- !u!1001 &1926203954417499522

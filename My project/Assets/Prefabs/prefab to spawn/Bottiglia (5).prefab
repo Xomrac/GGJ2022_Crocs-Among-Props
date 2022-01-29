@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8647741439775061602}
   - component: {fileID: 4059727204682648709}
   - component: {fileID: -3975184318102024032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottiglia (5)
   m_TagString: Throwable
   m_Icon: {fileID: 0}
