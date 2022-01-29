@@ -18,6 +18,7 @@ namespace GGJ
 		private void Start()
 		{
 			rb = GetComponent<Rigidbody>();
+			playerCamera = Camera.main.transform;
 			Cursor.lockState = CursorLockMode.Confined;
 			Cursor.visible = false;
 		}
