@@ -11,7 +11,7 @@ namespace GGJ
         public GameObject DeathPanel;
         public GameObject optionPanel;
         public TextMeshProUGUI Timer;
-        public TextMeshProUGUI WinPanel;
+        public GameObject WinPanel;
 
         // Start is called before the first frame update
         void Start()
