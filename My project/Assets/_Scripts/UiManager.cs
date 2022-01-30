@@ -3,6 +3,7 @@ using Riutilizzabile;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
+using XInputDotNetPure;
 
 namespace GGJ
 {
@@ -23,6 +24,8 @@ namespace GGJ
         void Start()
         {
             TimerManager.Instance.GameOver += () => deathPanel.SetActive(true);
+            GamePad.SetVibration(0, 0, 0);
+
         }
 
     }
