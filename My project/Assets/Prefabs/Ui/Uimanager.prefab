@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 987754136}
+    - target: {fileID: 4423114516386049311, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 5498299365584824491, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_fontSize
       value: 28.8
@@ -232,6 +236,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 987754136}
+    - target: {fileID: 6732576069522309698, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 7027283024772890543, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

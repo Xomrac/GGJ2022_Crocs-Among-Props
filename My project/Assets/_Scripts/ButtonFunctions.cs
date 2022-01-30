@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Aura2API;
 using Cinemachine;
 using UnityEngine;
@@ -28,10 +29,26 @@ public class ButtonFunctions : MonoBehaviour
 		Application.Quit();
 	}
 
-	public void StartTimeTrial() {
+	public void TurnToPlayLevel()
+	{
+		StartCoroutine(StartTimeTrial());
+	}
+
+	public void TurnToMainMenu()
+	{
+		StartCoroutine(ToMainMenu());
+	}
+
+	public IEnumerator StartTimeTrial() 
+	{
+		TransitionManager.instance.animator.SetTrigger("Fade");
+		yield return new WaitForSeconds(1);
 		SceneManager.LoadScene(1);
 	}	
-	public void ToMainMenu() {
+	public IEnumerator ToMainMenu()
+	{
+		TransitionManager.instance.animator.SetTrigger("Fade");
+		yield return new WaitForSeconds(1);
 		SceneManager.LoadScene(0);
 	}
 

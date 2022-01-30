@@ -885,6 +885,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761123836}
   m_CullTransparentMesh: 1
+--- !u!1 &774469908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6574368221456657214, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+  m_PrefabInstance: {fileID: 7945529209744702588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &774469909 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8792670191888490781, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+  m_PrefabInstance: {fileID: 7945529209744702588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &774469911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774469908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c01956ca4cdc84e8ad6c7bdc89cb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 774469909}
 --- !u!1 &783423802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,11 +1141,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: e481d48cdc412104d9b83ff19231ffe7, type: 2}
-  SettingPannel: {fileID: 310147416}
-  camera: {fileID: 0}
+  settingPanel: {fileID: 310147416}
+  mainCamera: {fileID: 0}
   auraCamera: {fileID: 0}
   sun: {fileID: 0}
   postProcessVolume: {fileID: 0}
+  vibrationOn: 1
 --- !u!4 &1185112463
 Transform:
   m_ObjectHideFlags: 0
@@ -2022,7 +2046,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1185112462}
         m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
-        m_MethodName: StartTimeTrial
+        m_MethodName: TurnToPlayLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2340,3 +2364,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7945529209744702588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105089682499900, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574368221456657214, guid: d953ca52373998c46aa579837e4cb342, type: 3}
+      propertyPath: m_Name
+      value: Transition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d953ca52373998c46aa579837e4cb342, type: 3}
