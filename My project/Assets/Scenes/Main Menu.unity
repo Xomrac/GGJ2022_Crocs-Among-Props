@@ -1118,11 +1118,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: e481d48cdc412104d9b83ff19231ffe7, type: 2}
-  SettingPannel: {fileID: 310147416}
-  camera: {fileID: 0}
+  settingPanel: {fileID: 310147416}
+  mainCamera: {fileID: 0}
   auraCamera: {fileID: 0}
   sun: {fileID: 0}
   postProcessVolume: {fileID: 0}
+  vibrationOn: 1
 --- !u!4 &1185112463
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,8 +1243,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a08192505de8c664d93cac6b70117390, type: 2}
+  m_sharedMaterial: {fileID: 55534915175198360, guid: a08192505de8c664d93cac6b70117390, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1273,7 +1274,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
