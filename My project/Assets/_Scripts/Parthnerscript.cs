@@ -24,6 +24,7 @@ public class Parthnerscript : MonoBehaviour {
    public float mediumDistanceTreshold;
    public float lessThanMediumDistanceTreshold;
    public float minDistanceTreshold;
+   
    private void Update() {
       dxmotor = findIfLFet(player.transform.forward, transform.position, player.transform.up);
       FindMultiplier();
@@ -88,6 +89,7 @@ public class Parthnerscript : MonoBehaviour {
    }
    private void OnTriggerEnter(Collider other) {
       if (other.CompareTag("Player")) {
+         TimerManager.Instance.IsGameOver = true;
          TimerManager.Instance.StopAllCoroutines();
          TimerManager.Instance.OSTSource.Stop();
          TimerManager.Instance.source.PlayOneShot(winSound);

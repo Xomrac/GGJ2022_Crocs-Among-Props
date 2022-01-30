@@ -45,5 +45,11 @@ public class ButtonFunctions : MonoBehaviour {
 		auraCamera.enabled = !check;
 		postProcessVolume.SetActive(!check);
 	}
+
+	public void ps4Controller(bool check) {
+		if (check) {
+			
+		}
+	}
 	
 }
