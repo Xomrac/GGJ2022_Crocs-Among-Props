@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winSound: {fileID: 8300000, guid: 044347b404b5f484eb3e280658ce05ba, type: 3}
-  suonoAiuto: {fileID: 8300000, guid: 07bb858d1ff71fc4f99bbb210fc47869, type: 3}
   timeToReproduceSound: 2
   timeVibration: 0.5
+  isPausing: 0
 --- !u!54 &7072246432624212154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,9 +155,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 60
+  MaxDistance: 40
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
