@@ -112,6 +112,7 @@ namespace GGJ
             TimerManager.Instance.source.PlayOneShot(winSound);
             UiManager.Instance.winText.text += $"{TimerManager.Instance.minutes:00}:{TimerManager.Instance.seconds:00}";
             UiManager.Instance.winPanel.gameObject.SetActive(true);
+            GamePad.SetVibration(playerIndex, 0, 0);
            
                EventSystem.current.SetSelectedGameObject(UiManager.Instance.winPanelFirstElement);
             

@@ -42,7 +42,7 @@ public class ButtonFunctions : MonoBehaviour
 	public IEnumerator StartTimeTrial() 
 	{
 		TransitionManager.instance.animator.SetTrigger("Fade");
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene("Cose3D");
 	}	
 	public IEnumerator ToMainMenu()
