@@ -105,7 +105,11 @@ MonoBehaviour:
   timeToReproduceSound: 2
   timeVibration: 1
   multiplier: 2.03
-  maxDistanceTreshold: 100
+  maxDistanceTreshold: 300
+  lessThanMaxDistanceTreshold: 110
+  mediumDistanceTreshold: 70
+  lessThanMediumDistanceTreshold: 50
+  minDistanceTreshold: 25
 --- !u!54 &7072246432624212154
 Rigidbody:
   m_ObjectHideFlags: 0

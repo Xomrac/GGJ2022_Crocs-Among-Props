@@ -20,6 +20,10 @@ public class Parthnerscript : MonoBehaviour {
    public float multiplier;
    private GameObject player;
    public float maxDistanceTreshold;
+   public float lessThanMaxDistanceTreshold;
+   public float mediumDistanceTreshold;
+   public float lessThanMediumDistanceTreshold;
+   public float minDistanceTreshold;
    private void Update() {
       dxmotor = findIfLFet(player.transform.forward, transform.position, player.transform.up);
       FindMultiplier();
@@ -29,7 +33,21 @@ public class Parthnerscript : MonoBehaviour {
       float temp;
       temp = Vector3.Distance(player.transform.position, transform.position);
       Debug.Log(temp);
-      multiplier=temp/ maxDistanceTreshold;
+      if (temp<maxDistanceTreshold) {
+         multiplier = 0f;
+      }
+      if (temp<lessThanMaxDistanceTreshold) {
+         multiplier = 0.25f;
+      }
+      if (temp<mediumDistanceTreshold) {
+         multiplier = 0.5f;
+      }
+      if (temp<lessThanMediumDistanceTreshold) {
+         multiplier = 0.75f;
+      }
+      if (temp<minDistanceTreshold) {
+         multiplier = 1f;
+      }
    }
    private float findIfLFet(Vector3 fwd, Vector3 targetDir, Vector3 up) {
       Vector3 perp = Vector3.Cross(fwd, targetDir);
