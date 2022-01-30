@@ -16,14 +16,54 @@ namespace GGJ
       public float timeVibration;
       private Coroutine currentCoroutine;
       public bool isPausing;
-      
+      public GameObject player;
+      public float maxDistanceTreshold;
+      public float lessThanMaxDistanceTreshold;
+      public float mediumDistanceTreshold;
+      public float lessThanMediumDistanceTreshold;
+      public float minDistanceTreshold;
+      private float dxmotor;
+      public float multiplier;
+
+      private void FindMultiplier() {
+         float temp;
+         temp = Vector3.Distance(player.transform.position, transform.position);
+         Debug.Log(temp);
+         if (temp<maxDistanceTreshold) {
+            multiplier = 0f;
+         }
+         if (temp<lessThanMaxDistanceTreshold) {
+            multiplier = 0.25f;
+         }
+         if (temp<mediumDistanceTreshold) {
+            multiplier = 0.5f;
+         }
+         if (temp<lessThanMediumDistanceTreshold) {
+            multiplier = 0.75f;
+         }
+         if (temp<minDistanceTreshold) {
+            multiplier = 1f;
+         }
+      }
+      private float findIfLFet(Vector3 fwd, Vector3 targetDir, Vector3 up) {
+         Vector3 perp = Vector3.Cross(fwd, targetDir);
+         float dir = Vector3.Dot(perp, up);
+					
+         if (dir > 0f) {
+            return 1f;
+         } else if (dir < 0f) {
+            return -1f;
+         } else {
+            return 0f;
+         }
+      }
 
       IEnumerator SetControllerVibration()
       {
          Debug.Log("brrrr");
          if (ButtonFunctions.instance.vibrationOn)
          {
-            GamePad.SetVibration(playerIndex, .8f, .8f);
+            GamePad.SetVibration(playerIndex,-dxmotor*multiplier,dxmotor*multiplier);
          }
          yield return new WaitForSeconds(timeVibration);
          GamePad.SetVibration(playerIndex, 0, 0);
@@ -34,6 +74,7 @@ namespace GGJ
       private void Start()
       {
          StartCoroutine(PlaySound());
+         player = FindObjectOfType<GGJ.PlayerMovement>().gameObject;
       }
 
       private IEnumerator PlaySound()
@@ -55,6 +96,8 @@ namespace GGJ
 
       private void Update() {
          isPausing = UiManager.Instance.optionPanel.activeSelf;
+         dxmotor = findIfLFet(player.transform.forward, transform.position, player.transform.up);
+         FindMultiplier();
          if (isPausing) {
             GamePad.SetVibration(playerIndex, 0, 0);
          }
