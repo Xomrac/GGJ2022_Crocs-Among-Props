@@ -55,6 +55,9 @@ namespace GGJ
 
       private void Update() {
          isPausing = UiManager.Instance.optionPanel.activeSelf;
+         if (isPausing) {
+            GamePad.SetVibration(playerIndex, 0, 0);
+         }
       }
 
       private void OnTriggerEnter(Collider other)

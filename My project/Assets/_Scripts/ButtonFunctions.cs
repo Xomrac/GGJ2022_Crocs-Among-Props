@@ -53,7 +53,7 @@ public class ButtonFunctions : MonoBehaviour
 	}
 
 	public void SetMixerVolume(float slider) {
-		mixer.SetFloat("Volume",slider);
+		mixer.SetFloat("Volume",(float)Math.Log10(slider)*20f);
 	}
 
 	public void OpenSetting() {
