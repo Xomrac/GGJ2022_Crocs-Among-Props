@@ -1,18 +1,30 @@
+using System;
 using Aura2API;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
-public class ButtonFunctions : MonoBehaviour {
+public class ButtonFunctions : MonoBehaviour
+{
+	public static ButtonFunctions instance;
+
+	private void Awake()
+	{
+		instance = this;
+	}
+
 	public AudioMixer mixer;
-	public GameObject SettingPannel;
-	public CinemachineFreeLook camera;
+	[FormerlySerializedAs("SettingPanel")] [FormerlySerializedAs("SettingPannel")] public GameObject settingPanel;
+	[FormerlySerializedAs("camera")] public CinemachineFreeLook mainCamera;
 	public AuraCamera auraCamera;
 	public GameObject sun;
 	public GameObject postProcessVolume;
+
+	public bool vibrationOn=true;
 	
-	public void exitGame() {
+	public void ExitGame() {
 		Application.Quit();
 	}
 
@@ -23,27 +35,32 @@ public class ButtonFunctions : MonoBehaviour {
 		SceneManager.LoadScene(0);
 	}
 
-	public void volume(float slider) {
+	public void SetMixerVolume(float slider) {
 		mixer.SetFloat("Volume",slider);
 	}
 
 	public void OpenSetting() {
-		SettingPannel.SetActive(!SettingPannel.activeSelf);
+		settingPanel.SetActive(!settingPanel.activeSelf);
 	}
 
 	public void MouseSensitivity(float slider) {
-		camera.m_XAxis.m_MaxSpeed = slider;
+		mainCamera.m_XAxis.m_MaxSpeed = slider;
 	}
 
 	public void MouseInvert(bool b) {
-		camera.m_XAxis.m_InvertInput = b;
+		mainCamera.m_XAxis.m_InvertInput = b;
 	}
 	
-	public void TurnLowGraphics(bool check)
+	public void TurnLowGraphics(bool checkValue)
 	{
-		sun.SetActive(!check);
-		auraCamera.enabled = !check;
-		postProcessVolume.SetActive(!check);
+		sun.SetActive(!checkValue);
+		auraCamera.enabled = !checkValue;
+		postProcessVolume.SetActive(!checkValue);
+	}
+
+	public void TurnVibration(bool checkValue)
+	{
+		vibrationOn = checkValue;
 	}
 	
 }

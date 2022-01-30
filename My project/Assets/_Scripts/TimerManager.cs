@@ -33,7 +33,7 @@ namespace GGJ
 			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");
 			GameOver += (() => Instance.OSTSource.Stop());
 
-			timeText = UiManager.Instance.Timer;
+			timeText = UiManager.Instance.timerElement;
 			timeText.gameObject.SetActive(true);
 		}
 

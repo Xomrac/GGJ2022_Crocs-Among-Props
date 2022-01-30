@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using XInputDotNetPure;
 
 namespace GGJ 
@@ -90,9 +91,14 @@ namespace GGJ
 					timesJumped = 0;
 				}
 			}
-			if (Input.GetButtonDown("Cancel")&& !TimerManager.Instance.IsGameOver) {
+			if (Input.GetButtonDown("Cancel")&& !TimerManager.Instance.IsGameOver) 
+			{
 				isPausing = !UiManager.Instance.optionPanel.activeSelf;
 				UiManager.Instance.optionPanel.SetActive(!UiManager.Instance.optionPanel.activeSelf);
+				if (UiManager.Instance.optionPanel.activeSelf)
+				{
+					EventSystem.current.SetSelectedGameObject(UiManager.Instance.optionsFirstElement);
+				}
 				Time.timeScale = Mathf.Clamp(Convert.ToInt32(!UiManager.Instance.optionPanel.activeSelf), 0, 1f);
 				Cursor.lockState = CursorLockMode.Confined;
 				Cursor.visible = UiManager.Instance.optionPanel.activeSelf;
