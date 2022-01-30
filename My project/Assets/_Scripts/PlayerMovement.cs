@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using XInputDotNetPure;
+
 namespace GGJ 
 {
 	public class PlayerMovement : MonoBehaviour {
@@ -17,7 +20,7 @@ namespace GGJ
 		private bool isPausing;
 		private float movementTimer;
 		public float maxDistanceToRaycast;
-
+		
 		private int timesJumped;
 		
 
@@ -106,6 +109,8 @@ namespace GGJ
 			}
 			
 		}
+
+		
 	}
 
 }

@@ -102,7 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winSound: {fileID: 8300000, guid: 044347b404b5f484eb3e280658ce05ba, type: 3}
   suonoAiuto: {fileID: 8300000, guid: 07bb858d1ff71fc4f99bbb210fc47869, type: 3}
-  timeToReproduceSound: 10
+  timeToReproduceSound: 2
+  timeVibration: 1
 --- !u!54 &7072246432624212154
 Rigidbody:
   m_ObjectHideFlags: 0
