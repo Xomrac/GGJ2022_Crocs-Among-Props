@@ -34,16 +34,7 @@ namespace GGJ
 			float verticalInput = Input.GetAxis("Vertical");
 			var movementDirection = new Vector3(horizontalInput, 0, verticalInput);
 			
-			if ((IsGrounded() && Input.GetButtonDown("Jump"))|| (!IsGrounded() && timesJumped<maxJumps && Input.GetButtonDown("Jump")))
-			{
-				TimerManager.Instance.source.PlayOneShot(jump,0.6f);
-				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-				timesJumped++;
-			}
-			if (IsGrounded())
-			{
-				timesJumped = 0;
-			}
+			
 			if (movementDirection != Vector3.zero)
 			{
 				movementTimer += Time.fixedDeltaTime;
@@ -82,6 +73,16 @@ namespace GGJ
 
 		private void Update() {
 			
+			if ((IsGrounded() && Input.GetButtonDown("Jump"))|| (!IsGrounded() && timesJumped<maxJumps && Input.GetButtonDown("Jump")))
+			{
+				TimerManager.Instance.source.PlayOneShot(jump,0.6f);
+				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+				timesJumped++;
+			}
+			if (IsGrounded())
+			{
+				timesJumped = 0;
+			}
 			if (Input.GetButtonDown("Cancel")&& !TimerManager.Instance.IsGameOver) {
 				UiManager.Instance.optionPanel.SetActive(!UiManager.Instance.optionPanel.activeSelf);
 				Time.timeScale = Mathf.Clamp(Convert.ToInt32(!UiManager.Instance.optionPanel.activeSelf), 0, 1f);

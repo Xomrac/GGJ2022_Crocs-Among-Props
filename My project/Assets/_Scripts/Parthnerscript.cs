@@ -8,8 +8,19 @@ using UnityEngine;
 
 public class Parthnerscript : MonoBehaviour {
    public AudioClip winSound;
+   public AudioClip suonoAiuto;
    public float timeToReproduceSound;
 
+   private void Start() {
+      StartCoroutine(soundplay());
+   }
+
+   private IEnumerator soundplay() {
+      while (true) {
+         GetComponent<AudioSource>().Play();
+         yield return new WaitForSeconds( timeToReproduceSound);
+      }
+   }
    private void OnTriggerEnter(Collider other) {
       if (other.CompareTag("Player")) {
          TimerManager.Instance.StopAllCoroutines();
