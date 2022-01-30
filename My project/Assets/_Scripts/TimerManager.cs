@@ -3,6 +3,7 @@ using System.Collections;
 using Riutilizzabile;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace GGJ 
 {
@@ -32,7 +33,7 @@ namespace GGJ
 			GameOver += (() =>  Cursor.visible=true);
 			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");
 			GameOver += (() => Instance.OSTSource.Stop());
-
+			GameOver+=  (() => EventSystem.current.SetSelectedGameObject(UiManager.Instance.winPanelFirstElement));
 			timeText = UiManager.Instance.timerElement;
 			timeText.gameObject.SetActive(true);
 		}

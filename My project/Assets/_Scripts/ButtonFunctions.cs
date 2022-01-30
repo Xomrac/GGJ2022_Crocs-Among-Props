@@ -43,13 +43,14 @@ public class ButtonFunctions : MonoBehaviour
 	{
 		TransitionManager.instance.animator.SetTrigger("Fade");
 		yield return new WaitForSeconds(1);
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene("Cose3D");
 	}	
 	public IEnumerator ToMainMenu()
 	{
+		Time.timeScale = 1f;
 		TransitionManager.instance.animator.SetTrigger("Fade");
-		yield return new WaitForSeconds(1);
-		SceneManager.LoadScene(0);
+		yield return new WaitForSecondsRealtime(1);
+		SceneManager.LoadScene("Main Menu");
 	}
 
 	public void SetMixerVolume(float slider) {
