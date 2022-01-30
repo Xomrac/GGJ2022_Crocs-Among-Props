@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Experimental.GlobalIllumination;
 using XInputDotNetPure;
 
 namespace GGJ
@@ -24,6 +26,8 @@ namespace GGJ
       public float minDistanceTreshold;
       private float dxmotor;
       public float multiplier;
+      public GameObject lightCue;
+      public GameObject particleCue;
 
       private void FindMultiplier() {
          float temp;
@@ -75,6 +79,17 @@ namespace GGJ
       {
          StartCoroutine(PlaySound());
          player = FindObjectOfType<GGJ.PlayerMovement>().gameObject;
+         if (diffucltySettingKeeper.Instance.currentDifficulty.lightOn) {
+            lightCue.SetActive(true);
+            particleCue.SetActive(true);
+         }
+         else {
+            lightCue.SetActive(false);
+            particleCue.SetActive(false);
+         }
+         timeToReproduceSound = diffucltySettingKeeper.Instance.currentDifficulty.timeSoundClue;
+         TimerManager.Instance.timerForDeath = diffucltySettingKeeper.Instance.currentDifficulty.Timer;
+
       }
 
       private IEnumerator PlaySound()

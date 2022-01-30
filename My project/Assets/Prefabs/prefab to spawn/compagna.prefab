@@ -5019,6 +5019,8 @@ MonoBehaviour:
   lessThanMediumDistanceTreshold: 50
   minDistanceTreshold: 20
   multiplier: 0
+  lightCue: {fileID: 5073045155004187041}
+  particleCue: {fileID: 2442018750478879268}
 --- !u!54 &7072246432624212154
 Rigidbody:
   m_ObjectHideFlags: 0
