@@ -31,7 +31,7 @@ namespace GGJ
 			timerIsRunning = true;
 			// GameOver += (() => StopTimer());
 			GameOver += (() => Time.timeScale = 0f);
-			GameOver += (() =>  source.PlayOneShot(lose));
+			GameOver += (() =>  source.PlayOneShot(lose,0.3f));
 			GameOver += (() =>  IsGameOver=true);
 			GameOver += (() =>  Cursor.visible=true);
 			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");

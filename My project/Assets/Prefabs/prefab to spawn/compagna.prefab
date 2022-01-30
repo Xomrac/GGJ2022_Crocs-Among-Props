@@ -4856,8 +4856,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.4009434, g: 0.916067, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 20
+  m_Intensity: 1.2
+  m_Range: 18
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5009,7 +5009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winSound: {fileID: 8300000, guid: 044347b404b5f484eb3e280658ce05ba, type: 3}
-  timeToReproduceSound: 2
+  timeToReproduceSound: 5
   timeVibration: 0.5
   isPausing: 0
   player: {fileID: 0}

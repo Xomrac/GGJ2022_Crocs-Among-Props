@@ -82,7 +82,7 @@ namespace GGJ
 			if (!isPausing) {
 				{
 					if ((IsGrounded() && Input.GetButtonDown("Jump")) || (!IsGrounded() && timesJumped < maxJumps && Input.GetButtonDown("Jump"))) {
-						TimerManager.Instance.source.PlayOneShot(jump, 0.3f);
+						TimerManager.Instance.source.PlayOneShot(jump, 0.1f);
 						rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 						timesJumped++;
 					}

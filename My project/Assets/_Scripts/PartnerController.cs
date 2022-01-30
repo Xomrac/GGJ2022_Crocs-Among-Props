@@ -109,8 +109,8 @@ namespace GGJ
          {
             TimerManager.Instance.StopAllCoroutines();
             TimerManager.Instance.OSTSource.Stop();
-            TimerManager.Instance.source.PlayOneShot(winSound);
-            UiManager.Instance.winText.text += $"{TimerManager.Instance.minutes:00}:{TimerManager.Instance.seconds:00}";
+            TimerManager.Instance.source.PlayOneShot(winSound,0.3f);
+            UiManager.Instance.winText.text += $" Time Remaning: {TimerManager.Instance.minutes:00}:{TimerManager.Instance.seconds:00}";
             UiManager.Instance.winPanel.gameObject.SetActive(true);
             GamePad.SetVibration(playerIndex, 0, 0);
            

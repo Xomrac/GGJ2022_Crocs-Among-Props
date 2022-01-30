@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using XInputDotNetPure;
 
 public class ButtonFunctions : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class ButtonFunctions : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
+		GamePad.SetVibration(0,0,0);
 	}
 
 	public AudioMixer mixer;
