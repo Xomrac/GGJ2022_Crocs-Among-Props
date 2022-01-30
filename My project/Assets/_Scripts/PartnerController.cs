@@ -73,8 +73,10 @@ namespace GGJ
             Time.timeScale = 0f;
          }
       }
-      
-      
+
+      private void OnApplicationQuit() {
+         GamePad.SetVibration(playerIndex, 0, 0);
+      }
    }
 
 }
