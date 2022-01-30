@@ -16,10 +16,37 @@ public class Parthnerscript : MonoBehaviour {
    GamePadState prevState;
    public float timeVibration;
    private Coroutine coru;
+   private float dxmotor;
+   public float multiplier;
+   private GameObject player;
+   public float maxDistanceTreshold;
+   private void Update() {
+      dxmotor = findIfLFet(player.transform.forward, transform.position, player.transform.up);
+      FindMultiplier();
+   }
+
+   private void FindMultiplier() {
+      float temp;
+      temp = Vector3.Distance(player.transform.position, transform.position);
+      Debug.Log(temp);
+      multiplier=temp/ maxDistanceTreshold;
+   }
+   private float findIfLFet(Vector3 fwd, Vector3 targetDir, Vector3 up) {
+      Vector3 perp = Vector3.Cross(fwd, targetDir);
+      float dir = Vector3.Dot(perp, up);
+		
+      if (dir > 0f) {
+         return 1f;
+      } else if (dir < 0f) {
+         return -1f;
+      } else {
+         return 0f;
+      }
+   }
    
    IEnumerator vibra() {
       Debug.Log("brrrr");
-      GamePad.SetVibration(playerIndex,1,1);
+      GamePad.SetVibration(playerIndex,-dxmotor*multiplier,dxmotor*multiplier);
       yield return new WaitForSeconds(timeVibration);
       GamePad.SetVibration(playerIndex,0,0);
       coru = null;
@@ -27,6 +54,7 @@ public class Parthnerscript : MonoBehaviour {
    }
    private void Start() {
       StartCoroutine(soundplay());
+      player = FindObjectOfType<GGJ.PlayerMovement>().gameObject;
    }
 
    private IEnumerator soundplay() {

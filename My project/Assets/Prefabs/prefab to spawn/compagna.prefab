@@ -104,6 +104,8 @@ MonoBehaviour:
   suonoAiuto: {fileID: 8300000, guid: 07bb858d1ff71fc4f99bbb210fc47869, type: 3}
   timeToReproduceSound: 2
   timeVibration: 1
+  multiplier: 2.03
+  maxDistanceTreshold: 100
 --- !u!54 &7072246432624212154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ AudioSource:
   m_GameObject: {fileID: 5370468068843551490}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e481d48cdc412104d9b83ff19231ffe7, type: 2}
   m_audioClip: {fileID: 8300000, guid: 07bb858d1ff71fc4f99bbb210fc47869, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
