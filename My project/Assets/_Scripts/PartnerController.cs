@@ -15,7 +15,7 @@ namespace GGJ
       private GamePadState previousState;
       public float timeVibration;
       private Coroutine currentCoroutine;
-      private bool isPausing;
+      public bool isPausing;
       
 
       IEnumerator SetControllerVibration()
@@ -54,7 +54,7 @@ namespace GGJ
       }
 
       private void Update() {
-         isPausing = !UiManager.Instance.optionPanel.activeSelf;
+         isPausing = UiManager.Instance.optionPanel.activeSelf;
       }
 
       private void OnTriggerEnter(Collider other)
