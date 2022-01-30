@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,6 +15,8 @@ namespace GGJ
       private GamePadState previousState;
       public float timeVibration;
       private Coroutine currentCoroutine;
+      private bool isPausing;
+      
 
       IEnumerator SetControllerVibration()
       {
@@ -38,15 +41,20 @@ namespace GGJ
          yield return new WaitForSeconds(timeToReproduceSound);
          while (true)
          {
-            GetComponent<AudioSource>().Play();
-            if (currentCoroutine == null)
-            {
-               Debug.Log("vibra");
-               currentCoroutine = StartCoroutine(SetControllerVibration());
+            if (!isPausing) {
+               GetComponent<AudioSource>().Play();
+               if (currentCoroutine == null) {
+                  Debug.Log("vibra");
+                  currentCoroutine = StartCoroutine(SetControllerVibration());
+               }
             }
             yield return new WaitForSeconds(timeToReproduceSound);
          }
          // ReSharper disable once IteratorNeverReturns
+      }
+
+      private void Update() {
+         isPausing = !UiManager.Instance.optionPanel.activeSelf;
       }
 
       private void OnTriggerEnter(Collider other)
@@ -65,6 +73,8 @@ namespace GGJ
             Time.timeScale = 0f;
          }
       }
+      
+      
    }
 
 }
