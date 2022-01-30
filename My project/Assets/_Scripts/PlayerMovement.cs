@@ -82,7 +82,7 @@ namespace GGJ
 			if (!isPausing) {
 				{
 					if ((IsGrounded() && Input.GetButtonDown("Jump")) || (!IsGrounded() && timesJumped < maxJumps && Input.GetButtonDown("Jump"))) {
-						TimerManager.Instance.source.PlayOneShot(jump, 0.6f);
+						TimerManager.Instance.source.PlayOneShot(jump, 0.3f);
 						rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 						timesJumped++;
 					}
@@ -110,7 +110,7 @@ namespace GGJ
 				Debug.Log(rb.velocity.magnitude);
 				if (rb.velocity.magnitude>10) {
 					Debug.Log("bonk");
-					TimerManager.Instance.source.PlayOneShot(bonk);
+					TimerManager.Instance.source.PlayOneShot(bonk,0.4f);
 				}
 			}
 			
