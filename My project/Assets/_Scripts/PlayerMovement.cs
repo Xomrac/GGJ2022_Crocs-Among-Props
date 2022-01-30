@@ -110,7 +110,7 @@ namespace GGJ
 				Debug.Log(rb.velocity.magnitude);
 				if (rb.velocity.magnitude>10) {
 					Debug.Log("bonk");
-					TimerManager.Instance.source.PlayOneShot(bonk,0.4f);
+					TimerManager.Instance.source.PlayOneShot(bonk,0.1f);
 				}
 			}
 			
