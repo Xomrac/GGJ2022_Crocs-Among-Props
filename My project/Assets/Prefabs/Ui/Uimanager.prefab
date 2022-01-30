@@ -182,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1298350130, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1298350130, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMin.x
@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026957685, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 115516722452427349, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_Sprite
@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 55534915175198360, guid: a08192505de8c664d93cac6b70117390, type: 2}
     - target: {fileID: 5740942979501187396, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274393336427193853, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -362,15 +362,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f5b6f5278ac5d1b4191e76524e201da4, type: 3}
     - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.4642857
       objectReference: {fileID: 0}
     - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.4642857
       objectReference: {fileID: 0}
     - target: {fileID: 7485409459830177296, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -414,11 +414,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8368299216321146246, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.4642857
       objectReference: {fileID: 0}
     - target: {fileID: 8368299216321146246, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8659670269595021647, guid: 7a0088c7ab26e2848b464a1abfd6d7ac, type: 3}
       propertyPath: m_fontAsset
