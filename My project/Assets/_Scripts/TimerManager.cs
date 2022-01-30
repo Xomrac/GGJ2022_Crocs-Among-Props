@@ -4,6 +4,8 @@ using Riutilizzabile;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using XInputDotNetPure;
 
 namespace GGJ 
 {
@@ -21,6 +23,7 @@ namespace GGJ
 		public TextMeshProUGUI timeText;
 		[HideInInspector]public float minutes;
 		[HideInInspector]public float seconds;
+		public Sprite loseImage;
 
 		private void Start() {
 			// StartCoroutine(StartLevelTimer());
@@ -34,6 +37,8 @@ namespace GGJ
 			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");
 			GameOver += (() => Instance.OSTSource.Stop());
 			GameOver+=  (() => EventSystem.current.SetSelectedGameObject(UiManager.Instance.winPanelFirstElement));
+			GameOver += (() => UiManager.Instance.winPanel.GetComponentInChildren<Image>().sprite = loseImage);
+			GameOver += (() => GamePad.SetVibration(0, 0, 0));
 			timeText = UiManager.Instance.timerElement;
 			timeText.gameObject.SetActive(true);
 		}
