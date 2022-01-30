@@ -3,28 +3,43 @@ using System.Collections;
 using Riutilizzabile;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using XInputDotNetPure;
 
 namespace GGJ 
 {
 
-	public class TimerManager : Singleton<TimerManager> 
-	{
+	public class TimerManager : Singleton<TimerManager> {
+		public AudioClip lose;
+		public AudioSource source;
+		public AudioSource OSTSource;
 		public float timeToSpawnEnemy;
 		public Action GameOver;
+		public bool IsGameOver;
 		public Action EnemyCalled;
 		public float timerForDeath;
 		public bool timerIsRunning = false;
 		public TextMeshProUGUI timeText;
 		[HideInInspector]public float minutes;
 		[HideInInspector]public float seconds;
+		public Sprite loseImage;
 
 		private void Start() {
 			// StartCoroutine(StartLevelTimer());
+			Time.timeScale = 1f;
 			timerIsRunning = true;
 			// GameOver += (() => StopTimer());
 			GameOver += (() => Time.timeScale = 0f);
-
-			timeText = UiManager.Instance.Timer;
+			GameOver += (() =>  source.PlayOneShot(lose));
+			GameOver += (() =>  IsGameOver=true);
+			GameOver += (() =>  Cursor.visible=true);
+			GameOver += (() =>  UiManager.Instance.winText.text="You lost!");
+			GameOver += (() => Instance.OSTSource.Stop());
+			GameOver+=  (() => EventSystem.current.SetSelectedGameObject(UiManager.Instance.winPanelFirstElement));
+			GameOver += (() => UiManager.Instance.winPanel.GetComponentInChildren<Image>().sprite = loseImage);
+			GameOver += (() => GamePad.SetVibration(0, 0, 0));
+			timeText = UiManager.Instance.timerElement;
 			timeText.gameObject.SetActive(true);
 		}
 

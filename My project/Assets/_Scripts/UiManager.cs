@@ -2,22 +2,27 @@
 using Riutilizzabile;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 namespace GGJ
 {
 
     public class UiManager : Singleton<UiManager>
     {
-        public GameObject DeathPanel;
+        [FormerlySerializedAs("DeathPanel")] public GameObject deathPanel;
         public GameObject optionPanel;
-        public TextMeshProUGUI Timer;
+        [FormerlySerializedAs("Timer")] public TextMeshProUGUI timerElement;
         public TextMeshProUGUI winText;
-        public GameObject WinPanel;
+        [FormerlySerializedAs("WinPanel")] public GameObject winPanel;
+
+
+        public GameObject optionsFirstElement;
+        public GameObject winPanelFirstElement;
 
         // Start is called before the first frame update
         void Start()
         {
-            TimerManager.Instance.GameOver += () => DeathPanel.SetActive(true);
+            TimerManager.Instance.GameOver += () => deathPanel.SetActive(true);
         }
 
     }

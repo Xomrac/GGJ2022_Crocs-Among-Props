@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7978524441246821882}
   - component: {fileID: -7354083051310834664}
   - component: {fileID: -973932668300968114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mdl_drinkcan (7) 1
   m_TagString: Throwable
   m_Icon: {fileID: 0}
