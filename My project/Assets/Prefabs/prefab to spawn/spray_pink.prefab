@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -830196140693181528}
   - component: {fileID: 6566185393809298204}
   m_Layer: 3
-  m_Name: spray
+  m_Name: spray_pink
   m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49be3d4d83578a44eb878e30485f74ad, type: 2}
+  - {fileID: 2100000, guid: 4e03a5481d10c5540aca3dd9f5625523, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

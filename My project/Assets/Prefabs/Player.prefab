@@ -4911,6 +4911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: {fileID: 0}
   move: {fileID: 0}
+  bonk: {fileID: 0}
   playerCamera: {fileID: 0}
   rotationSpeed: 100
   jumpSpeed: 5
@@ -4940,8 +4941,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxJumps: 2
-  maxDistanceToRaycast: 0.7
-  timesJumped: 0
+  maxDistanceToRaycast: 10
 --- !u!54 &7385144179140378853
 Rigidbody:
   m_ObjectHideFlags: 0
