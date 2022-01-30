@@ -104,6 +104,13 @@ MonoBehaviour:
   timeToReproduceSound: 2
   timeVibration: 0.5
   isPausing: 0
+  player: {fileID: 0}
+  maxDistanceTreshold: 150
+  lessThanMaxDistanceTreshold: 100
+  mediumDistanceTreshold: 80
+  lessThanMediumDistanceTreshold: 50
+  minDistanceTreshold: 20
+  multiplier: 0
 --- !u!54 &7072246432624212154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,7 +162,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 40
+  MaxDistance: 150
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -214,7 +221,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.11388889
       inSlope: 0
       outSlope: 0
       tangentMode: 0
