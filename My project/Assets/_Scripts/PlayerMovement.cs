@@ -1,10 +1,12 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace GGJ 
 {
 	public class PlayerMovement : MonoBehaviour {
 		public AudioClip jump;
 		public AudioClip move;
+		public AudioClip bonk;
 		[SerializeField] private Transform playerCamera;
 		[SerializeField] private float rotationSpeed;
 		[SerializeField] private float jumpSpeed;
@@ -12,6 +14,7 @@ namespace GGJ
 		[SerializeField] private AnimationCurve speedCurve;
 		[SerializeField] private int maxJumps;
 		private Rigidbody rb;
+		private bool isPausing;
 		private float movementTimer;
 		public float maxDistanceToRaycast;
 
@@ -72,23 +75,36 @@ namespace GGJ
 		}
 
 		private void Update() {
-			
-			if ((IsGrounded() && Input.GetButtonDown("Jump"))|| (!IsGrounded() && timesJumped<maxJumps && Input.GetButtonDown("Jump")))
-			{
-				TimerManager.Instance.source.PlayOneShot(jump,0.6f);
-				rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-				timesJumped++;
-			}
-			if (IsGrounded())
-			{
-				timesJumped = 0;
+			if (!isPausing) {
+				{
+					if ((IsGrounded() && Input.GetButtonDown("Jump")) || (!IsGrounded() && timesJumped < maxJumps && Input.GetButtonDown("Jump"))) {
+						TimerManager.Instance.source.PlayOneShot(jump, 0.6f);
+						rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+						timesJumped++;
+					}
+				}
+				if (IsGrounded()) {
+					timesJumped = 0;
+				}
 			}
 			if (Input.GetButtonDown("Cancel")&& !TimerManager.Instance.IsGameOver) {
+				isPausing = !UiManager.Instance.optionPanel.activeSelf;
 				UiManager.Instance.optionPanel.SetActive(!UiManager.Instance.optionPanel.activeSelf);
 				Time.timeScale = Mathf.Clamp(Convert.ToInt32(!UiManager.Instance.optionPanel.activeSelf), 0, 1f);
 				Cursor.lockState = CursorLockMode.Confined;
 				Cursor.visible = UiManager.Instance.optionPanel.activeSelf;
 			}
+		}
+
+		private void OnCollisionEnter(Collision collision) {
+			if (collision.gameObject.CompareTag("Throwable")) {
+				Debug.Log(rb.velocity.magnitude);
+				if (rb.velocity.magnitude>10) {
+					Debug.Log("bonk");
+					TimerManager.Instance.source.PlayOneShot(bonk);
+				}
+			}
+			
 		}
 	}
 

@@ -12,8 +12,6 @@ public class crocsRotation : MonoBehaviour
 			Debug.DrawRay(transform.position, -transform.up * 5, Color.black);
 			//transform.up = hit.normal;
 			transform.rotation=Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal)), Time.fixedDeltaTime);
-			Debug.Log(hit.normal);
-			Debug.Log(hit.collider.gameObject.name);
 		}	}
 
 	
