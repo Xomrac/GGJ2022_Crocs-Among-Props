@@ -4873,6 +4873,7 @@ GameObject:
   - component: {fileID: 7385144179140378853}
   - component: {fileID: 1218120625}
   - component: {fileID: 1218120623}
+  - component: {fileID: 1218120624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4909,12 +4910,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c397f4c07da574db16892cc9080c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {fileID: 0}
+  jump: {fileID: 8300000, guid: b3db0eeec68d7494cb88b2e451d341b2, type: 3}
   move: {fileID: 0}
+  bonk: {fileID: 8300000, guid: 24e972bee3914ab4098b8a61b489ae23, type: 3}
   playerCamera: {fileID: 0}
   rotationSpeed: 100
-  jumpSpeed: 5
-  maxSpeed: 25
+  jumpSpeed: 6
+  maxSpeed: 19
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -4939,9 +4941,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxJumps: 2
-  maxDistanceToRaycast: 0.7
-  timesJumped: 0
+  maxJumps: 1
+  maxDistanceToRaycast: 0.8
 --- !u!54 &7385144179140378853
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4992,6 +4993,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &1218120624
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802590451728485140}
+  m_Enabled: 1
 --- !u!1001 &2047503813370224454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4999,6 +5008,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1922610757059100527}
     m_Modifications:
+    - target: {fileID: 7204294502702812190, guid: 14147a8ce1e8b9d4e8676e5fe62814f4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df9e2362e9263a94987ff726560d251c, type: 2}
+    - target: {fileID: 7204294502702812190, guid: 14147a8ce1e8b9d4e8676e5fe62814f4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: df9e2362e9263a94987ff726560d251c, type: 2}
     - target: {fileID: 8336698864450500465, guid: 14147a8ce1e8b9d4e8676e5fe62814f4, type: 3}
       propertyPath: m_RootOrder
       value: 0
